@@ -67,6 +67,10 @@ import binanceMiddleware from '../middlewares/binance.middlewares';
 // };
 
 //router.get('/streaming', useServerSentEventsMiddleware, streamRandomNumbers);
-router.get('/streaming', binanceMiddleware.eventsMiddleware, binanceController);
+router.get(
+  '/streaming',
+  binanceMiddleware.eventsMiddleware,
+  binanceController.streaming
+);
 
 export default router;
